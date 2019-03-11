@@ -10,12 +10,7 @@ class HomePage extends React.Component {
           <Button
           title="Voir le pokédex"
           onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'PokedexList' })
-              ],
-            }))
+            this.props.navigation.navigate('PokedexList');
           }}
         />
         </View>
