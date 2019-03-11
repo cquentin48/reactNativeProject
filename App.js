@@ -3,18 +3,15 @@ import HomePage from './View/HomePage';
 import PokedexList from './View/PokedexList'
 import SinglePokemonView from './View/SinglePokemonView';
 
-const App = createStackNavigator({
-  Home: {
-    screen: HomePage,
+const App = createStackNavigator(
+  {
+    Home: HomePage,
+    PokedexList : PokedexList,
+    Details: SinglePokemonView
   },
-  PokedexList : {
-    screen: PokedexList
-  },
-  Details: {
-    screen: SinglePokemonView,
-  },
-}, {
+  {
     initialRouteName: 'Home',
-});
+  }
+);
 
 export default createAppContainer(App);
