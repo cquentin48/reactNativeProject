@@ -10,12 +10,10 @@ class PokedexList extends React.Component {
           <Button
           title="Voir le pokémon"
           onPress={() => {
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Details' })
-              ],
-            }))
+            /* 1. Navigate to the Details route with params */
+            this.props.navigation.navigate('Details', {
+              pokemonId: 3,
+            });
           }}
         />
         </View>

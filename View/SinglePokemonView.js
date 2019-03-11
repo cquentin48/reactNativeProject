@@ -3,9 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class HomePage extends React.Component {
     render() {
+        const { navigation } = this.props;
+        const pokemonId = navigation.getParam('pokemonId', 'NO-ID');
       return (
         <View style={styles.container}>
-          <Text>Simple pokémon</Text>
+          <Text>Pokémon n°{JSON.stringify(pokemonId)}.</Text>
         </View>
       );
     }
