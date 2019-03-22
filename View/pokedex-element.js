@@ -1,14 +1,14 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation';
-import { Button } from 'react-native-elements';
 
 class PokedexElement extends React.Component {
     render() {
       return (
-        <View>
+        <View style={{
+          width:128
+        }}>
         <Image
-        style={{width:96, height:96}}
+        style={{width:128, height:128}}
         source={{uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'}}
         />
         <Text

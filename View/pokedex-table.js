@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import PokedexElement from './pokedex-element';
-import { Navigation } from 'react-navigation';
 
 class PokedexTable extends React.Component {
     render() {
@@ -13,7 +12,7 @@ class PokedexTable extends React.Component {
                     pokemonId: 3,
                   });
             }}>
-                <PokedexElement navigation={this.props.navigation}/>
+            <PokedexElement navigation={this.props.navigation}/>
             </TouchableOpacity>
         </View>
       );

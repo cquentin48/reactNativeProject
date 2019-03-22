@@ -7,12 +7,16 @@ import TopSearchBar from './top-search-bar';
 class PokedexList extends React.Component {
     render() {
       return (
-        <View style={styles.container}>
-        <TopSearchBar/>
-          <PokedexTable
-            navigation = {this.props.navigation}
-            originComponentId = {this.props.originComponentId}
-          />
+        <View >
+        <TopSearchBar
+          style={
+            {textAlignVertical: 'top'}
+          }
+        />
+        <PokedexTable
+          navigation = {this.props.navigation}
+          originComponentId = {this.props.originComponentId}
+        />
         </View>
       );
     }
