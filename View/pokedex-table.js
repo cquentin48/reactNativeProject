@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, FlatList} from 'react-native';
 import PokedexElement from './pokedex-element';
-import TopSearchBar from './top-search-bar';
 
 class PokedexTable extends React.Component {
     render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import {View} from 'react-native';
 import PokedexTable from './pokedex-table';
 
 class PokedexList extends React.Component {
