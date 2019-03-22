@@ -1,13 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-class HomePage extends React.Component {
+class SinglePokemonView extends React.Component {
     render() {
         const { navigation } = this.props;
         const pokemonId = navigation.getParam('pokemonId', 'NO-ID');
       return (
         <View style={styles.container}>
-          <Text>Pokémon n°{JSON.stringify(pokemonId)}.</Text>
+          <Image
+          />
         </View>
       );
     }
@@ -22,4 +23,4 @@ class HomePage extends React.Component {
     },
   });
 
-export default HomePage
+export default SinglePokemonView
