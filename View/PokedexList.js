@@ -1,21 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackActions, NavigationActions } from 'react-navigation';
+import PokedexTable from './pokedex-table';
+import TopSearchBar from './top-search-bar';
 
 class PokedexList extends React.Component {
     render() {
       return (
         <View style={styles.container}>
-          <Text>Liste des pokémons</Text>
-          <Button
-          title="Voir le pokémon"
-          onPress={() => {
-            /* 1. Navigate to the Details route with params */
-            this.props.navigation.navigate('Details', {
-              pokemonId: 3,
-            });
-          }}
-        />
+        <TopSearchBar/>
+          <PokedexTable
+            navigation = {this.props.navigation}
+            originComponentId = {this.props.originComponentId}
+          />
         </View>
       );
     }
