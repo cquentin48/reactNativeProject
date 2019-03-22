@@ -11,13 +11,6 @@ class TopSearchBar extends React.Component {
         >
           <View>
             <Text style={{
-              textAlign: 'center',
-              fontSize: 20,
-              fontWeight: 'bold'
-            }}>Pokédex National</Text>
-          </View>
-          <View>
-            <Text style={{
               textAlign: 'center'
             }}>Il y a actuellement 964 pokémons répertoriés</Text>
           </View>
