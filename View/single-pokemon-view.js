@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import PokemonInfoRecap from './pokemon-info-recap';
 
 class SinglePokemonView extends React.Component {
     render() {
@@ -7,8 +8,7 @@ class SinglePokemonView extends React.Component {
         const pokemonId = navigation.getParam('pokemonId', 'NO-ID');
       return (
         <View style={styles.container}>
-          <Image
-          />
+          <PokemonInfoRecap/>
         </View>
       );
     }
