@@ -1,14 +1,19 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import ApplicationStyles from './styles';
+import {Text, View} from 'react-native';
 
 class TopSearchBar extends React.Component {
     render() {
       return (
-        <View>
+        <View
+        style={{
+          marginTop: 10
+        }}
+        >
           <View>
             <Text style={{
-              textAlign: 'center'
+              textAlign: 'center',
+              fontSize: 20,
+              fontWeight: 'bold'
             }}>Pokédex National</Text>
           </View>
           <View>

@@ -1,19 +1,34 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View} from 'react-native';
 import PokedexElement from './pokedex-element';
+import { ScrollView } from 'react-native-gesture-handler';
 
 class PokedexTable extends React.Component {
     render() {
       return (
-        <View>
-            <TouchableOpacity 
-            onPress={() => {
-                this.props.navigation.navigate('Details', {
-                    pokemonId: 3,
-                  });
-            }}>
-            <PokedexElement navigation={this.props.navigation}/>
-            </TouchableOpacity>
+        <View style={{flex: 3,
+        flexDirection: 'row',
+        flexWrap: 'wrap'}}>
+            <ScrollView>
+            </ScrollView>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
+                <PokedexElement navigation={this.props.navigation}/>
         </View>
       );
     }
