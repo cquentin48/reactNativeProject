@@ -5,11 +5,7 @@ import ApplicationStyles from './styles';
 class TopSearchBar extends React.Component {
     render() {
       return (
-        <View
-        style={{
-          marginTop: 0
-        }}
-        >
+        <View>
           <View>
             <Text style={{
               textAlign: 'center'
