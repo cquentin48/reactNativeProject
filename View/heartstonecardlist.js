@@ -8,7 +8,7 @@ class HeartStoneCardsList extends React.Component {
   }
     render() {
       return (
-        <View >
+        <View>
         <HeartStoneTable
           style={{
             justifyContent: 'center'

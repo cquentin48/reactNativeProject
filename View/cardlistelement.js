@@ -6,12 +6,15 @@ import CardListTableElementDetails from './cardlisttableelementdetails'
 class CardListElement extends React.Component {
   render() {
     return (
-      <View style={{
-        width: 120,
-        height: 150
-      }}>
-        <CardListTableElementDetails/>
-        <CardOptionButtons id={this.props.id} navigation={this.props.navigation}/>
+      <View>
+        <View style={{
+          width: 120,
+          height: 150,
+          justifyContent: "center"
+        }}>
+          <CardListTableElementDetails/>
+          <CardOptionButtons id={this.props.id} navigation={this.props.navigation}/>
+        </View>
       </View>
     );
   }
