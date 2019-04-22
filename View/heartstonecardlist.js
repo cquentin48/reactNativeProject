@@ -1,15 +1,15 @@
 import React from 'react';
 import {View} from 'react-native';
-import PokedexTable from './pokedex-table';
+import HeartStoneTable from './heartstonetable';
 
-class PokedexList extends React.Component {
+class HeartStoneCardsList extends React.Component {
   static navigationOptions ={
-    title: "Pokédex - 964 pokémons"
+    title: "Heartstone - 1200 cartes"
   }
     render() {
       return (
         <View >
-        <PokedexTable
+        <HeartStoneTable
           style={{
             justifyContent: 'center'
           }}
@@ -20,4 +20,4 @@ class PokedexList extends React.Component {
     }
   }
 
-export default PokedexList
+export default HeartStoneCardsList

@@ -1,12 +1,12 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomePage from './View/HomePage';
-import PokedexList from './View/pokedex-list'
+import HeartStoneCardsList from './View/heartstonecardlist'
 import SinglePokemonView from './View/SinglePokemonView';
 
 const App = createStackNavigator(
   {
     Home: HomePage,
-    PokedexList : PokedexList,
+    PokedexList : HeartStoneCardsList,
     Details: SinglePokemonView
   },
   {
