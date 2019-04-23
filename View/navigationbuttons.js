@@ -4,17 +4,11 @@ import {View, Button} from 'react-native';
 class NavigationButtons extends React.Component{
     render(){
         return (
-            <View
-                style={
-                {
-                    flex: 1,
-                    flexDirection: 'column',
-                    justifyContent: 'center'
-                }
-            }>
+            <View>
                 <View style={
                     {
-                        flexDirection: 'row'
+                        flexDirection: 'row',
+                        justifyContent: 'center'
                     }
                 }>
                     <Button
@@ -25,7 +19,7 @@ class NavigationButtons extends React.Component{
                         }}
                         title="<"
                         color="#26A69A"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={{borderWidth:1, height:40, width: 40}}
                     />
                     <Button
                         onPress={() => {
@@ -35,7 +29,7 @@ class NavigationButtons extends React.Component{
                         }}
                         title=">"
                         color="#26A69A"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={{borderWidth:1, height:40, width: 40}}
                     />
                 </View>
             </View>

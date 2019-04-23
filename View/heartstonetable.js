@@ -2,7 +2,7 @@ import React from 'react';
 import { View, FlatList} from 'react-native';
 import CardListElement from './cardlistelement';
 import CardDeckSearch from './carddecksearch';
-import DeckListNavigation from './decklistnavigation';
+import NavigationButtons from './navigationbuttons';
 
 class HeartStoneTable extends React.Component {
   state={
@@ -22,7 +22,7 @@ class HeartStoneTable extends React.Component {
               <CardDeckSearch updateSearch={this.updateSearch} search={search}/>
             </View>
             <View>
-              <DeckListNavigation/>
+              <NavigationButtons/>
             </View>
             <View>
               <FlatList
