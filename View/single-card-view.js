@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import HeartStoneCardDetail from './heartstone-card-detail';
 
-class HomePage extends React.Component {
+class SingleCardView extends React.Component {
+  static navigationOptions ={
+    title: `Effigie`
+  }
+
     render() {
-        const { navigation } = this.props;
-        const pokemonId = navigation.getParam('pokemonId', 'NO-ID');
       return (
         <View style={styles.container}>
-          <Text>Pokémon n°{JSON.stringify(pokemonId)}.</Text>
+          <HeartStoneCardDetail navigation={this.props.navigation}/>
         </View>
       );
     }
@@ -22,4 +25,4 @@ class HomePage extends React.Component {
     },
   });
 
-export default HomePage
+export default SingleCardView
