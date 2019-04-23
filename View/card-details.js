@@ -17,16 +17,32 @@ class CardDetail extends React.Component {
         </View>
         <View>
           <Text>
-            {this.props.defined}
+            {this.isDefined(this.props.defined)}
           </Text>
         </View>
         <View>
           <Text>
-            {this.props.collectible}
+            {this.isCollectible(this.props.collectible)}
           </Text>
         </View>
       </View>
     );
+  }
+
+  isDefined = defined =>{
+    if(defined){
+      return "Défini"
+    }else{
+      return "Not defined"
+    }
+  }
+
+  isCollectible = collectible =>{
+    if(collectible){
+      return "Carte collectible"
+    }else{
+      return "Carte non collectible"
+    }
   }
 }
 

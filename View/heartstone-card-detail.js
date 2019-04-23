@@ -16,7 +16,7 @@ class HeartStoneCardDetail extends React.Component {
             <CardImage imageUrl="https://art.hearthstonejson.com/v1/render/latest/frFR/512x/AT_002.png" artistName="Tooth"/>
           </View>
           <View>
-            <CardDetail/>
+            <CardDetail rarity="rare" type="spell" defined= {false} collectible={true}/>
           </View>
           <View>
             <CardNavigationButton navigation={this.props.navigation}/>
