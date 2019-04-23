@@ -3,7 +3,6 @@ import {View, StyleSheet} from 'react-native';
 import CardDetail from './card-details';
 import CardMainInfos from './card-main-infos';
 import CardImage from './card-image';
-import CardNavigationButton from './card-navigation-button';
 
 class HeartStoneCardDetail extends React.Component {
     render() {
@@ -13,13 +12,14 @@ class HeartStoneCardDetail extends React.Component {
             <CardMainInfos title="Effigie" class=""/>
           </View>
           <View>
-            <CardImage imageUrl="https://art.hearthstonejson.com/v1/render/latest/frFR/512x/AT_002.png" artistName="Tooth"/>
+            <CardImage
+              imageUrl="https://art.hearthstonejson.com/v1/render/latest/frFR/512x/AT_002.png"
+              artistName="Tooth"
+              description="Un homme, une flamme… Un homme et une flamme !"
+              />
           </View>
           <View>
             <CardDetail rarity="rare" type="spell" defined= {false} collectible={true}/>
-          </View>
-          <View>
-            <CardNavigationButton navigation={this.props.navigation}/>
           </View>
         </View>
       );

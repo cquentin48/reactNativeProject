@@ -7,7 +7,7 @@ class CardDetail extends React.Component {
       <View>
         <View>
           <Text>
-            {`Rarity : ${this.props.rarity}`}
+            {`Rareté : ${this.props.rarity}`}
             </Text>
         </View>
         <View>
@@ -17,31 +17,29 @@ class CardDetail extends React.Component {
         </View>
         <View>
           <Text>
-            {this.isDefined(this.props.defined)}
+            {this.isDefined(this.props.defined,"Défini", "Non défini")}
           </Text>
         </View>
         <View>
           <Text>
-            {this.isCollectible(this.props.collectible)}
+            {this.isDefined(this.props.collectible,"Collectible","Non collectible")}
           </Text>
         </View>
       </View>
     );
   }
 
-  isDefined = defined =>{
-    if(defined){
-      return "Défini"
+  /**
+   * Check a condition and displays a message according to the boolean
+   * @param isTrue booleanCondition
+   * @param trueMessage message to display if [isTrue] is [true]
+   * @param falseMessage message to display if [isTrue] is [false]
+   */
+  isDefined(isTrue, trueMessage, falseMessage){
+    if(isTrue){
+      return trueMessage
     }else{
-      return "Not defined"
-    }
-  }
-
-  isCollectible = collectible =>{
-    if(collectible){
-      return "Carte collectible"
-    }else{
-      return "Carte non collectible"
+      return falseMessage
     }
   }
 }

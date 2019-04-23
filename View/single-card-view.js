@@ -4,8 +4,9 @@ import HeartStoneCardDetail from './heartstone-card-detail';
 
 class SingleCardView extends React.Component {
   static navigationOptions ={
-    title: "#1 - Effigie"
+    title: `Effigie`
   }
+
     render() {
       return (
         <View style={styles.container}>
