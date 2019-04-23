@@ -23,7 +23,7 @@ class CardListTableElementDetails extends React.Component {
                 </View>
                 <View>
                   <Text>
-                    Inflige $8 |4(point,points) de dégâts à un serviteur.
+                    Inflige $8 |4(point,points) de dégâts à un serviteur.{this.props.id}
                   </Text>
                 </View>
             </View>
