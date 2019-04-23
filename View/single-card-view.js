@@ -1,14 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import PokemonInfoRecap from './pokemon-info-recap';
+import HeartStoneCardDetail from './heartstone-card-detail';
 
-class SinglePokemonView extends React.Component {
+class SingleCardView extends React.Component {
     render() {
-        const { navigation } = this.props;
-        const pokemonId = navigation.getParam('pokemonId', 'NO-ID');
       return (
         <View style={styles.container}>
-          <PokemonInfoRecap/>
+          <HeartStoneCardDetail navigation={this.props.navigation}/>
         </View>
       );
     }
@@ -23,4 +21,4 @@ class SinglePokemonView extends React.Component {
     },
   });
 
-export default SinglePokemonView
+export default SingleCardView
