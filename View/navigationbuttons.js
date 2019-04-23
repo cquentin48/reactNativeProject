@@ -13,9 +13,7 @@ class NavigationButtons extends React.Component{
                 }>
                     <Button
                         onPress={() => {
-                            this.props.navigation.navigate('Details', {
-                                pokemonId: this.props.id,
-                              });
+                            this.nextPage
                         }}
                         title="<"
                         color="#26A69A"
@@ -23,9 +21,7 @@ class NavigationButtons extends React.Component{
                     />
                     <Button
                         onPress={() => {
-                            this.props.navigation.navigate('Details', {
-                                pokemonId: this.props.id,
-                              });
+                            this.nextPage
                         }}
                         title=">"
                         color="#26A69A"
@@ -34,6 +30,10 @@ class NavigationButtons extends React.Component{
                 </View>
             </View>
         );
+    }
+
+    nextPage = newId =>{
+        this.props.updateIndex
     }
 }
 

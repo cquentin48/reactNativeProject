@@ -12,7 +12,7 @@ class CardListElement extends React.Component {
           height: 150,
           justifyContent: "center"
         }}>
-          <CardListTableElementDetails/>
+          <CardListTableElementDetails id={this.props.id}/>
           <CardOptionButtons id={this.props.id} navigation={this.props.navigation}/>
         </View>
       </View>

@@ -3,6 +3,7 @@ import { View, Image, Text} from 'react-native';
 
 class CardListTableElementDetails extends React.Component {
     render(){
+      const text = this.props.id
         return(
             <View style={
                 {
@@ -18,12 +19,12 @@ class CardListTableElementDetails extends React.Component {
                 </View>
                 <View>
                   <Text>
-                    Lance de flammes
+                    {text}
                   </Text>
                 </View>
                 <View>
                   <Text>
-                    Inflige $8 |4(point,points) de dégâts à un serviteur.{this.props.id}
+                    Inflige $8 |4(point,points) de dégâts à un serviteur.
                   </Text>
                 </View>
             </View>
