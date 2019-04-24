@@ -18,13 +18,15 @@ class HeartStoneTable extends React.Component {
 
   nextPage = newId =>{
     let newData = this.state.data;
-    newData.map((singleKey)=>{
-      singleKey = parseInt(singleKey.key+newId).toString()
-    })
+    newData.map(singleKey => singleKey.key = (parseInt(singleKey.key.toString())+newId).toString())
     this.setState({
       data:newData
     })
   }
+
+  shouldComponentUpdate(nextProps) {
+    return true;
+ }
 
     render() {
       const search = this.state.search;

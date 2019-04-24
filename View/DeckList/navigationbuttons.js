@@ -13,7 +13,7 @@ class NavigationButtons extends React.Component{
                 }>
                     <Button
                         onPress={() => {
-                            this.nextPage
+                            this.nextPage()
                         }}
                         title="<"
                         color="#26A69A"
@@ -21,7 +21,7 @@ class NavigationButtons extends React.Component{
                     />
                     <Button
                         onPress={() => {
-                            this.nextPage
+                            this.nextPage()
                         }}
                         title=">"
                         color="#26A69A"
@@ -33,7 +33,7 @@ class NavigationButtons extends React.Component{
     }
 
     nextPage = newId =>{
-        this.props.updateIndex
+        this.props.updateIndex(20)
     }
 }
 

@@ -3,7 +3,7 @@ import { SearchBar } from 'react-native-elements';
 
 class CardDeckSearch extends React.Component {
       updateSearch = search => {
-        this.props.updateSearch
+        this.props.updateSearch(search)
       };
     
       render() {
@@ -12,7 +12,7 @@ class CardDeckSearch extends React.Component {
         return (
           <SearchBar
             placeholder="Filtre"
-            onChangeText={this.updateSearch}
+            onChangeText={this.updateSearch(searchInput)}
             value={searchInput}
           />
         );
