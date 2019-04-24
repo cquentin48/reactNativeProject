@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "test",
-    "slug": "test-native",
+    "name": "HeartStone",
+    "slug": "HeartStone",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
