@@ -10,7 +10,7 @@ class HomePage extends React.Component {
           <Button
           title="Voir le pokédex"
           onPress={() => {
-            this.props.navigation.navigate('PokedexList');
+            this.props.navigation.navigate('DeckList');
           }}
         />
         </View>
