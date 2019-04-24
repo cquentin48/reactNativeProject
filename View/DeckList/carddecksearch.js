@@ -12,7 +12,7 @@ class CardDeckSearch extends React.Component {
         return (
           <SearchBar
             placeholder="Filtre"
-            onChangeText={this.updateSearch(searchInput)}
+            onChangeText={this.updateSearch}
             value={searchInput}
           />
         );
