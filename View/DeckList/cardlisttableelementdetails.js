@@ -12,18 +12,18 @@ class CardListTableElementDetails extends React.Component {
               }>
                 <View>
                   <Image
-                    source={{ uri: 'https://art.hearthstonejson.com/v1/orig/AT_001.png' }}
+                    source={{ uri: this.props.imageURL }}
                     style={{ width: 79, height: 79 }}
                   />
                 </View>
                 <View>
                   <Text>
-                    {this.props.id}
+                    {this.props.title}
                   </Text>
                 </View>
                 <View>
                   <Text>
-                    Inflige $8 |4(point,points) de dégâts à un serviteur.
+                    {this.props.description}
                   </Text>
                 </View>
             </View>

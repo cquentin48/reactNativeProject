@@ -13,6 +13,7 @@ class CardDeckSearch extends React.Component {
           <TextInput
           onChangeText={(text) => this.updateSearch(text)}
           value={this.props.search}
+          placeholder="Filtre"
           />
         );
       }
