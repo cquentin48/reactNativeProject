@@ -2,6 +2,9 @@ import React from 'react';
 import {View, Button} from 'react-native';
 
 class NavigationButtons extends React.Component{
+    state={
+        pageIndex:20
+    }
     render(){
         return (
             <View>
@@ -13,7 +16,7 @@ class NavigationButtons extends React.Component{
                 }>
                     <Button
                         onPress={() => {
-                            this.nextPage
+                            this.previousPage()
                         }}
                         title="<"
                         color="#26A69A"
@@ -21,7 +24,7 @@ class NavigationButtons extends React.Component{
                     />
                     <Button
                         onPress={() => {
-                            this.nextPage
+                            this.nextPage()
                         }}
                         title=">"
                         color="#26A69A"
@@ -32,8 +35,14 @@ class NavigationButtons extends React.Component{
         );
     }
 
-    nextPage = newId =>{
-        this.props.updateIndex
+    nextPage = () =>{
+        let pageIndex = this.state.pageIndex
+        this.props.nextPage(pageIndex)
+    }
+
+    previousPage = () =>{
+        let pageIndex = this.state.pageIndex
+        this.props.previousPage(pageIndex)
     }
 }
 

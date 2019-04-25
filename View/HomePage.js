@@ -1,18 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { StackActions, NavigationActions } from 'react-navigation';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 class HomePage extends React.Component {
+    static navigationOptions ={
+      title: "Heartstone - API - React Native"
+    }
     render() {
       return (
         <View style={styles.container}>
-          <Text>Page de garde</Text>
-          <Button
-          title="Voir le pokédex"
-          onPress={() => {
-            this.props.navigation.navigate('DeckList');
-          }}
-        />
+        <TouchableOpacity 
+              onPress={() => {
+                  this.props.navigation.navigate('DeckList');
+              }}>
+          <Image
+            source={require("../assets/icon-hearthstone.png")}
+          />
+        </TouchableOpacity>
+        <Text>
+          Projet réalisé par Elzbetia BEILING & Quentin CHAPEL
+        </Text>
         </View>
       );
     }
