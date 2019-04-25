@@ -39,6 +39,7 @@ class HeartStoneTable extends React.Component {
                   renderItem={({item}) =>(<CardListElement id={item.key.toString()} navigation={this.props.navigation} />)}
                   keyExtractor = {(item,index) => index.toString()}
                   numColumns={1}
+                  extraData = {this.state}
               />
             </View>
         </View>

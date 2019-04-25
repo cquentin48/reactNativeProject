@@ -3,7 +3,7 @@ import { View, Image, Text} from 'react-native';
 
 class CardListTableElementDetails extends React.Component {
     render(){
-      const text = this.props.id
+      console.log(this.props)
         return(
             <View style={
                 {
@@ -19,7 +19,7 @@ class CardListTableElementDetails extends React.Component {
                 </View>
                 <View>
                   <Text>
-                    {text}
+                    {this.props.id}
                   </Text>
                 </View>
                 <View>
