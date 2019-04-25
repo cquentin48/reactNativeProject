@@ -11,8 +11,8 @@ class HeartStoneTable extends React.Component {
     {key: "11"},{key: "12"},{key: "13"},{key: "14"},{key: "15"},{key: "16"},{key: "17"},{key: "18"},{key: "19"},{key: "20"},{key: "21"},{key: "22"}]
   };
   
-  updateSearch = search =>{
-    this.setState({search});
+  updateSearch = searchInput =>{
+    this.setState({search: searchInput});
   }
 
   nextPage = newId =>{
