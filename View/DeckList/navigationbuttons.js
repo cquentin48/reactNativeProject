@@ -1,49 +1,65 @@
 import React from 'react';
-import {View, Button} from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-class NavigationButtons extends React.Component{
-    state={
-        pageIndex:20
+class NavigationButtons extends React.Component {
+    state = {
+        pageIndex: 20
     }
-    render(){
+    render() {
         return (
-            <View>
-                <View style={
-                    {
-                        flexDirection: 'row',
-                        justifyContent: 'center'
-                    }
-                }>
-                    <Button
-                        onPress={() => {
-                            this.previousPage()
+            <View style={styles.MainContainer}>
+                <TouchableOpacity
+                    activeOpacity={0.7}
+                    onPress={this.clickHandler}
+                    style={styles.TouchableOpacityStyle}>
+                    <Image
+                        //We are making FAB using TouchableOpacity with an image
+                        //We are using online image here
+                        source={{
+                            uri: 'http://aboutreact.com/wp-content/uploads/2018/08/bc72de57b000a7037294b53d34c2cbd1.png',
                         }}
-                        title="<"
-                        color="#26A69A"
-                        style={{borderWidth:1, height:40, width: 40}}
+                        //You can use you project image Example below
+                        //source={require('./images/float-add-icon.png')}
+                        style={styles.FloatingButtonStyle}
                     />
-                    <Button
-                        onPress={() => {
-                            this.nextPage()
-                        }}
-                        title=">"
-                        color="#26A69A"
-                        style={{borderWidth:1, height:40, width: 40}}
-                    />
-                </View>
+                </TouchableOpacity>
             </View>
         );
     }
 
-    nextPage = () =>{
+    nextPage = () => {
         let pageIndex = this.state.pageIndex
         this.props.nextPage(pageIndex)
     }
 
-    previousPage = () =>{
+    previousPage = () => {
         let pageIndex = this.state.pageIndex
         this.props.previousPage(pageIndex)
     }
 }
+const styles = StyleSheet.create({
+    MainContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5F5F5',
+    },
 
+    TouchableOpacityStyle: {
+        position: 'absolute',
+        width: 150,
+        height: 150,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 30,
+        bottom: 30,
+    },
+
+    FloatingButtonStyle: {
+        resizeMode: 'contain',
+        width: 50,
+        height: 50,
+        //backgroundColor:'black'
+    },
+});
 export default NavigationButtons
