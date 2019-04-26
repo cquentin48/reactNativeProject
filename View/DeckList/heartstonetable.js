@@ -1,8 +1,12 @@
+'use strict';
+
 import React from 'react';
 import { View, FlatList} from 'react-native';
 import CardListElement from './cardlistelement';
 import CardDeckSearch from './carddecksearch';
-import NavigationButtons from './navigationbuttons';
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+
+const pageIndex = 20;
 
 class HeartStoneTable extends React.Component {
   state={
@@ -12,6 +16,16 @@ class HeartStoneTable extends React.Component {
     data:[{key: "1"},{key: "2"},{key: "3"},{key: "4"},{key: "5"},{key: "6"},{key: "7"},{key: "8"},{key: "9"},{key: "10"},
     {key: "11"},{key: "12"},{key: "13"},{key: "14"},{key: "15"},{key: "16"},{key: "17"},{key: "18"},{key: "19"},{key: "20"},{key: "21"},{key: "22"}]
   };
+  
+  onSwipeLeft() {
+    console.log("Swipe!")
+    this.previousPage(pageIndex);
+  }
+
+  onSwipeRight() {
+    console.log("Swipe!")
+    this.nextPage(pageIndex);
+  }
   
   updateSearch = searchInput =>{
     this.setState({search: searchInput});
@@ -46,19 +60,26 @@ class HeartStoneTable extends React.Component {
 
     render() {
       const search = this.state.search;
+      const config = {
+        velocityThreshold: 0.3,
+        directionalOffsetThreshold: 80
+      };
+      console.log(this.state.data)
       return (
         <View>
             <View>
               <CardDeckSearch updateSearch={this.updateSearch} search={search}/>
             </View>
             <View>
-              <NavigationButtons
-                navigation={this.props.navigation}
-                nextPage={this.nextPage}
-                previousPage={this.previousPage}
-              />
-            </View>
-            <View>
+            <GestureRecognizer
+              onSwipeLeft={() => this.onSwipeLeft()}
+              onSwipeRight={() => this.onSwipeRight()}
+              config={config}
+              style={{
+                flex: 1,
+                backgroundColor: this.state.backgroundColor
+              }}
+            >
               <FlatList
                   data={this.state.data}
                   renderItem={({item}) =>(<CardListElement id={item.key.toString()}
@@ -71,6 +92,7 @@ class HeartStoneTable extends React.Component {
                   numColumns={1}
                   extraData = {this.state}
               />
+              </GestureRecognizer>
             </View>
         </View>
       );
