@@ -12,10 +12,8 @@ const pageIndex = 20;
 class HeartStoneTable extends React.Component {
   state = {
     search: '',
-    rawData: [[{ key: "1" }, { key: "2" }, { key: "3" }, { key: "4" }, { key: "5" }, { key: "6" }, { key: "7" }, { key: "8" }, { key: "9" }, { key: "10" },
-    { key: "11" }, { key: "12" }, { key: "13" }, { key: "14" }, { key: "15" }, { key: "16" }, { key: "17" }, { key: "18" }, { key: "19" }, { key: "20" }, { key: "21" }, { key: "22" }],
-    [{ key: "21" }, { key: "22" }, { key: "23" }, { key: "24" }, { key: "5" }, { key: "6" }, { key: "7" }, { key: "8" }, { key: "9" }, { key: "10" },
-    { key: "11" }, { key: "12" }, { key: "13" }, { key: "14" }, { key: "15" }, { key: "16" }, { key: "17" }, { key: "18" }, { key: "19" }, { key: "20" }, { key: "21" }, { key: "22" }]],
+    rawData: [{ key: "1" }, { key: "2" }, { key: "3" }, { key: "4" }, { key: "5" }, { key: "6" }, { key: "7" }, { key: "8" }, { key: "9" }, { key: "10" },
+    { key: "11" }, { key: "12" }, { key: "13" }, { key: "14" }, { key: "15" }, { key: "16" }, { key: "17" }, { key: "18" }, { key: "19" }, { key: "20" }],
     data: [{ key: "1" }, { key: "2" }, { key: "3" }, { key: "4" }, { key: "5" }, { key: "6" }, { key: "7" }, { key: "8" }, { key: "9" }, { key: "10" },
     { key: "11" }, { key: "12" }, { key: "13" }, { key: "14" }, { key: "15" }, { key: "16" }, { key: "17" }, { key: "18" }, { key: "19" }, { key: "20" }, { key: "21" }, { key: "22" }]
   };
@@ -46,8 +44,8 @@ class HeartStoneTable extends React.Component {
     }
   }
  
-  onSwipe(gestureName, gestureState) {
-    const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
+  onSwipe(gestureName) {
+    const {SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
     this.setState({gestureName: gestureName});
     switch (gestureName) {
       case SWIPE_LEFT:
@@ -76,6 +74,7 @@ class HeartStoneTable extends React.Component {
         config={config}
         style={{
           flex: 1,
+          flexDirection: 'column',
           backgroundColor: this.state.backgroundColor
         }}
       >
@@ -85,7 +84,7 @@ class HeartStoneTable extends React.Component {
             renderItem={({ item }) => (<CardListElement id={item.key.toString()}
               navigation={this.props.navigation}
               imageURL='https://art.hearthstonejson.com/v1/orig/AT_001.png'
-              title="Lance de flammes"
+              title={item.key.toString()}
               description="Inflige $8 |4(point,points) de dégâts à un serviteur."
             />)}
             keyExtractor={(item, index) => index.toString()}
