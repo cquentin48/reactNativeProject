@@ -17,7 +17,7 @@ class HomePage extends React.Component {
           />
         </TouchableOpacity>
         <Text>
-          Projet réalisé par Elzbetia BEILING & Quentin CHAPEL
+          Projet réalisé par Elzbetia BELING & Quentin CHAPEL
         </Text>
         </View>
       );
