@@ -63,11 +63,11 @@ class HeartStoneTable extends React.Component {
   }
 
   render() {
-    const search = this.state.search;
     const config = {
       velocityThreshold: 0.3,
       directionalOffsetThreshold: 80
     };
+    const {state} = this.props.navigation
     return (
       <GestureRecognizer
         onSwipe={(direction, state) => this.onSwipe(direction, state)}
