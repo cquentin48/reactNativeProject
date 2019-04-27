@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 class HomePage extends React.Component {
     static navigationOptions ={
-      title: "Heartstone - API - React Native"
+      title: "Hearthstone - React Native"
     }
     render() {
       return (
