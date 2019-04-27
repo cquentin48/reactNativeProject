@@ -1,23 +1,21 @@
 import React from 'react';
 import {View} from 'react-native';
-import HeartStoneTable from './heartstonetable';
+import HeartStoneTable from './hearthstonetable';
 
-class HeartStoneCardsList extends React.Component {
+class HearthStoneCardsList extends React.Component {
   static navigationOptions ={
-    title: "Heartstone - 1200 cartes"
+    title: "Hearthstone - 1200 cartes"
   }
     render() {
       return (
-        <View>
         <HeartStoneTable
           style={{
             justifyContent: 'center'
           }}
           navigation = {this.props.navigation}
         />
-        </View>
       );
     }
   }
 
-export default HeartStoneCardsList
+export default HearthStoneCardsList

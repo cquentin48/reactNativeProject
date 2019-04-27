@@ -1,12 +1,12 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomePage from './View/HomePage';
-import HeartStoneCardsList from './View/DeckList/heartstonecardlist'
+import HearthStoneCardsList from './View/DeckList/hearthstonecardlist'
 import SingleCardView from './View/CardDetails/single-card-view';
 
 const App = createStackNavigator(
   {
     Home: HomePage,
-    DeckList : HeartStoneCardsList,
+    DeckList : HearthStoneCardsList,
     Details: SingleCardView
   },
   {
