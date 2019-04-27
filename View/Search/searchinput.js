@@ -3,6 +3,9 @@ import { TextInput, View } from 'react-native';
 import {Text} from 'react-native-elements';
 
 class SearchInput extends React.Component {
+      /**
+       * Call the mother component to update search text
+       */
       updateSearch = search => {
         this.props.updateSearch(search)
       };

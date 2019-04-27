@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 
 class SearchButtons extends React.Component {
@@ -25,12 +25,12 @@ class SearchButtons extends React.Component {
                     <Button
                         onPress={this.props.loadSearchResults}
                         title="Valider la recherche"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={styles.button}
                         color="#ff0000" />
                     <Button
                         onPress={this.props.razButtonHandle}
                         title="Raz la recherche"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={styles.button}
                         color="#00ff00" />
                 </View>
             </View>
@@ -38,4 +38,19 @@ class SearchButtons extends React.Component {
     }
 }
 
+const styles = StyleSheet.create({
+    firstView: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center'
+    },
+    secondView:{
+        flexDirection: 'row'
+    },
+    button:{
+        flex: 0.5,
+        borderWidth: 1,
+        height: 20
+    }
+})
 export default SearchButtons

@@ -1,19 +1,16 @@
 import React from 'react';
-import { View, Image, Text} from 'react-native';
+import { View, Image, Text, StyleSheet} from 'react-native';
 
 class CardListTableElementDetails extends React.Component {
     render(){
         return(
             <View style={
-                {
-                  flex: 1,
-                  flexDirection: 'row'
-                }
+                styles.view
               }>
                 <View>
                   <Image
                     source={{ uri: this.props.imageURL }}
-                    style={{ width: 79, height: 79 }}
+                    style={styles.image}
                   />
                 </View>
                 <View>
@@ -30,5 +27,12 @@ class CardListTableElementDetails extends React.Component {
         );
     }
 }
+const styles = StyleSheet.create({
 
+  view:{
+    flex: 1,
+    flexDirection: 'row'
+  },
+  image : { width: 79, height: 79 }
+})
 export default CardListTableElementDetails

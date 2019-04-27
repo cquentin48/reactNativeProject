@@ -5,56 +5,65 @@ import SearchButtons from './searchbuttons'
 
 class SearchView extends React.Component {
   static navigationOptions = {
-      title: "Recherche de carte"
+    title: "Recherche de carte"
   }
 
   state = {
-      search: "",
-      option: ""
+    search: "",
+    option: ""
   }
 
+  /**
+   * Update the search text
+   */
   updateSearchText = (searchInput) => {
     this.setState({
-      search:searchInput
+      search: searchInput
     })
   }
 
-  loadSearchResults = () =>{
-    this.props.navigation.navigate('DeckList',{
-      searchInput:this.state.search
+  /**
+   * Action which launch results into the cardlist view
+   */
+  loadSearchResults = () => {
+    this.props.navigation.navigate('DeckList', {
+      searchInput: this.state.search
     });
   }
 
-  razButtonHandle = () =>{
+  /**
+   * Reset the search text
+   */
+  razButtonHandle = () => {
     this.setState({
-      search:""
+      search: ""
     })
   }
 
-    render() {
-      const searchInput = (this.state.search == null) ? "" : this.state.search
-      return (
-        <View style={styles.container}>
-          <SearchInput
-            search={searchInput}
-            updateSearch={this.updateSearchText}
-          />
-          <SearchButtons
-            razButtonHandle={this.razButtonHandle}
-            loadSearchResults={this.loadSearchResults}
-          />
-        </View>
-      );
-    }
+  render() {
+    const searchInput = (this.state.search == null) ? "" : this.state.search
+    return (
+      <View style={styles.container}>
+        <SearchInput
+          search={searchInput}
+          updateSearch={this.updateSearchText}
+        />
+        <SearchButtons
+          razButtonHandle={this.razButtonHandle}
+          loadSearchResults={this.loadSearchResults}
+        />
+      </View>
+    );
   }
+}
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default SearchView
