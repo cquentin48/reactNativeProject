@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HeartStone",
-    "slug": "HeartStone",
+    "name": "HearthStone",
+    "slug": "HearthStone",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
