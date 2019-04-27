@@ -8,14 +8,12 @@ class HeartStoneCardsList extends React.Component {
   }
     render() {
       return (
-        <View>
         <HeartStoneTable
           style={{
             justifyContent: 'center'
           }}
           navigation = {this.props.navigation}
         />
-        </View>
       );
     }
   }
