@@ -4,6 +4,7 @@ import React from 'react';
 import { FlatList, StyleSheet, Dimensions } from 'react-native';
 import CardListElement from './cardlistelement';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+import DeckTitle from './decktitle';
 var Device_Width = Dimensions.get('window').width;
 
 const pageIndex = 20;
@@ -77,6 +78,7 @@ class HeartStoneTable extends React.Component {
           backgroundColor: this.state.backgroundColor
         }}
       >
+          <DeckTitle decktitle = "Toutes les cartes"/>
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => (<CardListElement id={item.key.toString()}
