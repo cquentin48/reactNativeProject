@@ -1,9 +1,8 @@
 'use strict';
 
 import React from 'react';
-import { View, FlatList, StyleSheet, Dimensions } from 'react-native';
+import { FlatList, StyleSheet, Dimensions } from 'react-native';
 import CardListElement from './cardlistelement';
-import CardDeckSearch from './carddecksearch';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 var Device_Width = Dimensions.get('window').width;
 
@@ -78,13 +77,12 @@ class HeartStoneTable extends React.Component {
           backgroundColor: this.state.backgroundColor
         }}
       >
-        <CardDeckSearch updateSearch={this.updateSearch} search={search} />
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => (<CardListElement id={item.key.toString()}
               navigation={this.props.navigation}
               imageURL='https://art.hearthstonejson.com/v1/orig/AT_001.png'
-              title={item.key.toString()}
+              title={"Lance de flammes"}
               description="Inflige $8 |4(point,points) de dégâts à un serviteur."
             />)}
             keyExtractor={(item, index) => index.toString()}
