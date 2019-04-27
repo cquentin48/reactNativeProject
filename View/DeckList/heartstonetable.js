@@ -1,18 +1,21 @@
 'use strict';
 
 import React from 'react';
-import { View, FlatList} from 'react-native';
+import { View, FlatList, StyleSheet, Dimensions} from 'react-native';
 import CardListElement from './cardlistelement';
 import CardDeckSearch from './carddecksearch';
-import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+import { ScrollView } from 'react-native-gesture-handler';
+var Device_Width = Dimensions.get('window').width ;
 
 const pageIndex = 20;
 
 class HeartStoneTable extends React.Component {
   state={
     search: '',
-    rawData:[{key: "1"},{key: "2"},{key: "3"},{key: "4"},{key: "5"},{key: "6"},{key: "7"},{key: "8"},{key: "9"},{key: "10"},
+    rawData:[[{key: "1"},{key: "2"},{key: "3"},{key: "4"},{key: "5"},{key: "6"},{key: "7"},{key: "8"},{key: "9"},{key: "10"},
     {key: "11"},{key: "12"},{key: "13"},{key: "14"},{key: "15"},{key: "16"},{key: "17"},{key: "18"},{key: "19"},{key: "20"},{key: "21"},{key: "22"}],
+    [{key: "21"},{key: "22"},{key: "23"},{key: "24"},{key: "5"},{key: "6"},{key: "7"},{key: "8"},{key: "9"},{key: "10"},
+    {key: "11"},{key: "12"},{key: "13"},{key: "14"},{key: "15"},{key: "16"},{key: "17"},{key: "18"},{key: "19"},{key: "20"},{key: "21"},{key: "22"}]],
     data:[{key: "1"},{key: "2"},{key: "3"},{key: "4"},{key: "5"},{key: "6"},{key: "7"},{key: "8"},{key: "9"},{key: "10"},
     {key: "11"},{key: "12"},{key: "13"},{key: "14"},{key: "15"},{key: "16"},{key: "17"},{key: "18"},{key: "19"},{key: "20"},{key: "21"},{key: "22"}]
   };
@@ -71,32 +74,59 @@ class HeartStoneTable extends React.Component {
               <CardDeckSearch updateSearch={this.updateSearch} search={search}/>
             </View>
             <View>
-            <GestureRecognizer
-              onSwipeLeft={() => this.onSwipeLeft()}
-              onSwipeRight={() => this.onSwipeRight()}
-              config={config}
-              style={{
-                flex: 1,
-                backgroundColor: this.state.backgroundColor
-              }}
-            >
-              <FlatList
-                  data={this.state.data}
-                  renderItem={({item}) =>(<CardListElement id={item.key.toString()}
-                                            navigation={this.props.navigation}
-                                            imageURL='https://art.hearthstonejson.com/v1/orig/AT_001.png'
-                                            title="Lance de flammes"
-                                            description="Inflige $8 |4(point,points) de dégâts à un serviteur."
-                                            />)}
-                  keyExtractor = {(item,index) => index.toString()}
-                  numColumns={1}
-                  extraData = {this.state}
-              />
-              </GestureRecognizer>
+              <ScrollView
+                horizontal= {true}
+                showsHorizontalScrollIndicator = {false}
+                pagingEnabled = {true}
+                >
+                <View style = {styles.FirstBlockStyle}>
+                  <FlatList
+                      data={this.state.data}
+                      renderItem={({item}) =>(<CardListElement id={item.key.toString()}
+                                                navigation={this.props.navigation}
+                                                imageURL='https://art.hearthstonejson.com/v1/orig/AT_001.png'
+                                                title="Lance de flammes"
+                                                description="Inflige $8 |4(point,points) de dégâts à un serviteur."
+                                                />)}
+                      keyExtractor = {(item,index) => index.toString()}
+                      numColumns={1}
+                      extraData = {this.state}
+                  />
+                </View>
+                <View style = {styles.FirstBlockStyle}>
+                  <FlatList
+                      data={this.state.data}
+                      renderItem={({item}) =>(<CardListElement id={item.key.toString()}
+                                                navigation={this.props.navigation}
+                                                imageURL='https://art.hearthstonejson.com/v1/orig/AT_001.png'
+                                                title="Lance de flammes"
+                                                description="Inflige $8 |4(point,points) de dégâts à un serviteur."
+                                                />)}
+                      keyExtractor = {(item,index) => index.toString()}
+                      numColumns={1}
+                      extraData = {this.state}
+                  />
+                </View>
+              </ScrollView>
             </View>
         </View>
       );
     }
   }
-
+  const styles = StyleSheet.create({
+ 
+    MainContainer :{
+   
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center'
+   
+    },FirstBlockStyle:{
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+      width: Device_Width 
+   
+    }
+  })
 export default HeartStoneTable
