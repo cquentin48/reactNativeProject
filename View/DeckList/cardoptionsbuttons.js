@@ -21,6 +21,7 @@ class CardOptionButtons extends React.Component {
                         onPress={() => {
                             this.props.navigation.navigate('Details', {
                                 pokemonId: this.props.id,
+                                title: "Effigie 2"
                               });
                         }}
                         title="Détails de la carte"

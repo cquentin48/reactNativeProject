@@ -3,9 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import HeartStoneCardDetail from './heartstone-card-detail';
 
 class SingleCardView extends React.Component {
-  static navigationOptions ={
-    title: `Effigie`
-  }
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.title}`,
+     headerTitleStyle : {textAlign: 'center',alignSelf:'center'},
+        headerStyle:{
+            backgroundColor:'white',
+        },
+    });
 
     render() {
       return (
