@@ -1,17 +1,14 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 
 class CardImage extends React.Component {
   render() {
     return (
       <View>
         <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
+          style={styles.view}>
             <Image
-              style={{width:135, height:202}}
+              style={styles.image}
               source={{uri: this.props.imageUrl}}
             />
           </View>
@@ -27,5 +24,12 @@ class CardImage extends React.Component {
     );
   }
 }
+const styles = StyleSheet.create({
 
+  view:{
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  image : {width:135, height:202}
+})
 export default CardImage;

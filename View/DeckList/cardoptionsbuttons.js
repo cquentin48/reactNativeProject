@@ -1,21 +1,15 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, Button,StyleSheet } from 'react-native';
 
 class CardOptionButtons extends React.Component {
     render() {
         return (
             <View
                 style={
-                {
-                    flex: 1,
-                    flexDirection: 'column',
-                    justifyContent: 'center'
-                }
+                styles.firstView
             }>
                 <View style={
-                    {
-                        flexDirection: 'row'
-                    }
+                    styles.secondView
                 }>
                     <Button
                         onPress={() => {
@@ -26,7 +20,7 @@ class CardOptionButtons extends React.Component {
                         }}
                         title="Détails de la carte"
                         color="#26A69A"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={styles.button}
                     />
                     <Button
                         onPress={() => {
@@ -36,12 +30,28 @@ class CardOptionButtons extends React.Component {
                         }}
                         title="Acheter la carte"
                         color="#26A69A"
-                        style={{flex:0.5, borderWidth:1, height:20}}
+                        style={styles.button}
                     />
                 </View>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    firstView: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center'
+    },
+    secondView:{
+        flexDirection: 'row'
+    },
+    button:{
+        flex: 0.5,
+        borderWidth: 1,
+        height: 20
+    }
+})
 
 export default CardOptionButtons

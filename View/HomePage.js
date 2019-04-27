@@ -10,14 +10,14 @@ class HomePage extends React.Component {
         <View style={styles.container}>
         <TouchableOpacity 
               onPress={() => {
-                  this.props.navigation.navigate('DeckList');
+                  this.props.navigation.navigate('CardSearch');
               }}>
           <Image
             source={require("../assets/icon-hearthstone.png")}
           />
         </TouchableOpacity>
         <Text>
-          Projet réalisé par Elzbetia BEILING & Quentin CHAPEL
+          Projet réalisé par Elzbetia BELING & Quentin CHAPEL
         </Text>
         </View>
       );

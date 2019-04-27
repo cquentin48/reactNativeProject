@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Text } from 'react-native-elements';
 
 class CardMainInfos extends React.Component {
   render() {
     return (
       <View>
         <View>
-          <Text>
+          <Text h1>
             {this.props.title}
           </Text>
         </View>

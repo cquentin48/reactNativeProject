@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text} from 'react-native';
+import { View, StyleSheet} from 'react-native';
 import CardOptionButtons from './cardoptionsbuttons';
 import CardListTableElementDetails from './cardlisttableelementdetails'
 
@@ -7,11 +7,7 @@ class CardListElement extends React.Component {
   render() {
     return (
       <View>
-        <View style={{
-          width: 120,
-          height: 150,
-          justifyContent: "center"
-        }}>
+        <View style={style.view}>
           <CardListTableElementDetails
           id={this.props.id}
           title={this.props.title}
@@ -24,5 +20,11 @@ class CardListElement extends React.Component {
     );
   }
 }
-
+const style = StyleSheet.create({
+  view:{
+    width: 120,
+    height: 150,
+    justifyContent: "center"
+  }
+})
 export default CardListElement
